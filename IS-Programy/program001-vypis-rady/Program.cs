@@ -1,21 +1,34 @@
 ﻿string again = "a";
 
-while(again.ToLower() == "a")
+while (again.ToLower() == "a")
 {
     Console.Clear();
-    Console.WriteLine("Napiš first");
-    int first = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Napiš final");
-    int last = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Napiš step");
-    int step = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Napiš first: ");
+    int first;
+    while (!int.TryParse(Console.ReadLine(), out first))
+    {
+        Console.WriteLine("Nezadal jsi celé číslo braindead. Zkus to znovu a lépe: ");
+    }
 
-    for(int i=first; i<last; i += step)
+    Console.Write("Napiš final: ");
+    int last;
+    while (!int.TryParse(Console.ReadLine(), out last))
+    {
+        Console.WriteLine("Nezadal jsi celé číslo braindead. Zkus to znovu a lépe: ");
+    }
+
+    Console.Write("Napiš step: ");
+    int step;
+    while (!int.TryParse(Console.ReadLine(), out step) || step <= 0)
+    {
+        Console.WriteLine("Nezadal jsi platné celé číslo větší než 0. Zkus to znovu a lépe: ");
+    }
+
+    for (int i = first; i < last; i += step)
     {
         Console.WriteLine(Convert.ToString(i));
     }
-Console.WriteLine("Pro opakování programu stiskněte klávesu a a následně enterem");
-again = Console.ReadLine() ?? "";
+
+    Console.Write("Pro opakování programu stiskněte klávesu A následně enterem potvrďte: ");
+    again = Console.ReadLine() ?? "";
 }
-
-

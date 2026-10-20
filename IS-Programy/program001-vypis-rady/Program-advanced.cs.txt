@@ -1,0 +1,44 @@
+
+string again = "a";
+
+while (again.ToLower() == "a")
+{
+    Console.Clear();
+
+    Console.Write("Napiš first: ");
+    int first;
+    while (!int.TryParse(Console.ReadLine(), out first))
+    {
+        Console.WriteLine("Zadej platné celé číslo: ");
+    }
+
+    Console.Write("Napiš last: ");
+    int last;
+    while (!int.TryParse(Console.ReadLine(), out last))
+    {
+        Console.WriteLine("Zadej platné celé číslo: ");
+    }
+
+    Console.Write("Napiš step (kladné číslo): ");
+    int step;
+    while (!int.TryParse(Console.ReadLine(), out step) || step <= 0)
+    {
+        Console.WriteLine("Krok musí být celé číslo větší než 0: ");
+    }
+
+    // Určíme směr řady podle počáteční a poslední hodnoty.
+    int smer = first <= last ? 1 : -1;
+
+    // Vypíšeme řadu včetně posledního čísla, pokud na něj krok přesně vyjde.
+    for (long i = first;
+         smer == 1 ? i <= last : i >= last;
+         i += (long)step * smer)
+    {
+        Console.WriteLine(i);
+    }
+
+    Console.Write(
+        "Pro opakování programu stiskněte A a potvrďte Enterem: ");
+
+    again = Console.ReadLine() ?? "";
+}

@@ -16,7 +16,6 @@ while (again.ToLower() == "a")
     {
         Console.WriteLine("Nezadal jsi celé číslo braindead. Zkus to znovu a lépe: ");
     }
-
     Console.Write("Napiš step: ");
     int step;
     while (!int.TryParse(Console.ReadLine(), out step) || step <= 0)

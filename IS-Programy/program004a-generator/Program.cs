@@ -43,13 +43,13 @@ while (again.ToLower() == "a")
         if (int.TryParse(input, out count) && count > 0) break;
         Console.WriteLine("Zadej celé číslo větší než 0: ");
     }
-
+    int[]numbers = new int[count];
     for(int i = 0; i < count; i++)
     {
-        int rndNum = generator.Next(min,max);
-        Console.WriteLine(rndNum);
-        if(rndNum%2==0){sudy++;}else{lichy++;}
-        if(rndNum>0){kladny++;}else {zaporny++;}
+        numbers[i] = generator.Next(min,max);
+        Console.WriteLine(numbers[i]);
+        if(numbers[i]%2==0){sudy++;}else{lichy++;}
+        if(numbers[i]>0){kladny++;}else {zaporny++;}
     }
 
     Console.WriteLine("Počet sudých čísel: "+ sudy);

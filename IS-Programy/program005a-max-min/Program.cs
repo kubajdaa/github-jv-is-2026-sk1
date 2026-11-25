@@ -86,6 +86,9 @@ int poziceMinima = 0;
     Console.WriteLine("**********");
     Console.WriteLine("Minimum: "+minimum);
     Console.WriteLine("Pozice minima: "+poziceMinima);
+
+
+if(maximum>=3){
     int index = maximum;
     
 
@@ -119,4 +122,9 @@ string text = "";
     }
     Console.Write("Pro opakování programu stiskněte klávesu A následně enterem potvrďte: ");
     again = Console.ReadLine() ?? "";
+    }
+    else
+    {
+        Console.WriteLine("bohuzel pyramidu nedostanes chlape max je moc maly");
+    }
 }

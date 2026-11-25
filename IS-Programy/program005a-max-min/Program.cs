@@ -92,7 +92,7 @@ int poziceMinima = 0;
 string text = "";
     for (int i=index; i>= 1;i-=2)
     {
-        
+        for(int x = 0;x<(maximum-i)/2;x++){text+=" ";}
         for(int j=0; j < i; j++)
         {
             
@@ -105,8 +105,9 @@ string text = "";
     }
     int index1 = 0;
     if(maximum%2==0){index1=2;}else{index1=1;}
-        for (int i=index1; i<=index;i+=2)
+    for (int i=index1; i<=index;i+=2)
     {
+        for(int x = 0;x<(maximum-i)/2;x++){text+=" ";}
         for(int j=0; j < i; j++)
         {
            text+="*";

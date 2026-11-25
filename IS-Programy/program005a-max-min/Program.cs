@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 
 string again = "a";
 
@@ -80,26 +81,41 @@ int poziceMinima = 0;
     Console.WriteLine("Počet záporných čísel: "+ zaporny);
 */
     Console.WriteLine("**********");
-    Console.WriteLine(maximum);
-    Console.WriteLine(poziceMaxima);
+    Console.WriteLine("Maximum: "+maximum);
+    Console.WriteLine("Pozice maxima: "+poziceMaxima);
     Console.WriteLine("**********");
-    Console.WriteLine(minimum);
-    Console.WriteLine(poziceMinima);
-/*
-int index = maximum;
+    Console.WriteLine("Minimum: "+minimum);
+    Console.WriteLine("Pozice minima: "+poziceMinima);
+    int index = maximum;
     
-    
-        string text ="";
-         for(int j= 0;j<maximum; j++)
+
+string text = "";
+    for (int i=index; i>= 1;i-=2)
+    {
+        
+        for(int j=0; j < i; j++)
         {
-            text+="*";
-            index-=2;
-            if (index < 2)
-            {
-                break;
-            }
+            
+           text+="*";
+                
+            
         }
-*/
+        Console.WriteLine(text+" ");
+        text="";
+    }
+    int index1 = 0;
+    if(maximum%2==0){index1=2;}else{index1=1;}
+        for (int i=index1; i<=index;i+=2)
+    {
+        for(int j=0; j < i; j++)
+        {
+           text+="*";
+                
+            
+        }
+        Console.WriteLine(text+" ");
+        text="";
+    }
     Console.Write("Pro opakování programu stiskněte klávesu A následně enterem potvrďte: ");
     again = Console.ReadLine() ?? "";
 }

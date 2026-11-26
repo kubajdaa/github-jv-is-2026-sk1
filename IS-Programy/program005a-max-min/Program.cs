@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
 
 string again = "a";
@@ -86,8 +87,18 @@ int poziceMinima = 0;
     Console.WriteLine("**********");
     Console.WriteLine("Minimum: "+minimum);
     Console.WriteLine("Pozice minima: "+poziceMinima);
-
-
+    Console.WriteLine();
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < maximum; j++)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("*");
+        }
+        Console.WriteLine();
+    }
+Console.ResetColor();
+Console.ForegroundColor = ConsoleColor.Yellow;
 if(maximum>=3){
     int index = maximum;
     
@@ -120,6 +131,16 @@ string text = "";
         Console.WriteLine(text+" ");
         text="";
     }
+        for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < maximum; j++)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("*");
+        }
+        Console.WriteLine();
+    }
+    Console.ResetColor();
     Console.Write("Pro opakování programu stiskněte klávesu A následně enterem potvrďte: ");
     again = Console.ReadLine() ?? "";
     }
